@@ -3,9 +3,6 @@ from sqlalchemy.orm import validates
 
 db = SQLAlchemy()
 
-# -------------------
-# Workout Model
-# -------------------
 class Workout(db.Model):
     __tablename__ = "workouts"
 
@@ -25,10 +22,6 @@ class Workout(db.Model):
             raise ValueError("Duration must be positive")
         return value
 
-
-# -------------------
-# Exercise Model
-# -------------------
 class Exercise(db.Model):
     __tablename__ = "exercises"
 
@@ -49,9 +42,6 @@ class Exercise(db.Model):
         return value
 
 
-# -------------------
-# Join Table
-# -------------------
 class WorkoutExercise(db.Model):
     __tablename__ = "workout_exercises"
 
