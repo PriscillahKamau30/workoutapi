@@ -21,10 +21,6 @@ def home():
     return "<h1>Workout API Running</h1>"
 
 
-# -------------------
-# WORKOUT ROUTES
-# -------------------
-
 @app.route("/workouts")
 def get_workouts():
     workouts = Workout.query.all()
@@ -95,9 +91,6 @@ def delete_workout(id):
     return {"message": "Deleted"}
     
 
-# -------------------
-# EXERCISE ROUTES
-# -------------------
 
 @app.route("/exercises")
 def get_exercises():
@@ -142,10 +135,6 @@ def delete_exercise(id):
 
     return {"message": "Exercise deleted"}
 
-
-# -------------------
-# ADD EXERCISE TO WORKOUT
-# -------------------
 
 @app.route("/workouts/<int:w_id>/exercises/<int:e_id>", methods=["POST"])
 def add_exercise(w_id, e_id):
